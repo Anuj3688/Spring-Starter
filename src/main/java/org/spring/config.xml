@@ -23,4 +23,7 @@
         <property name="studentName" value="hanuman"/>
         <property name="studentAddress" value="Ayodhya"/>
     </bean>
+
+<!--  Method 3 of Bean injection  -->
+    <bean class="org.spring.Student" name="student3"  p:studentName="Anuj" p:studentAddress="Mumbai" p:studentId="121" />
 </beans>
