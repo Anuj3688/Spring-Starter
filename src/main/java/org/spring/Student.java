@@ -1,15 +1,10 @@
-package org.example;
+package org.spring;
 
 public class Student {
     private int studentId;
     private String studentName;
     private String studentAddress;
 
-    public Student(String studentAddress, String studentName, int studentId) {
-        this.studentAddress = studentAddress;
-        this.studentName = studentName;
-        this.studentId = studentId;
-    }
 
     @Override
     public String toString() {
