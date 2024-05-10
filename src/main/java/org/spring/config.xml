@@ -9,7 +9,7 @@
            xsi:schemaLocation="http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!-- Method 1 of writing bean injection  -->
+    <!-- Method 1 of writing bean injection  value as an element-->
     <bean class="org.spring.Student" name="student1">
         <property name="studentId">
             <value>101</value>
@@ -20,14 +20,78 @@
         <property name="studentAddress">
             <value>Ayodhya</value>
         </property>
+        <property name="studentMarks" >
+            <list>
+                <value>92</value>
+                <value>29</value>
+            </list>
+        </property>
+        <property name="studentConfig">
+            <map>
+                <entry key="Ram Nagar" value="22"/>
+                <entry key="Sham Nagar" value="101"/>
+            </map>
+        </property>
+        <property name="studentPAddress" >
+            <ref bean="adref"></ref>
+        </property>
     </bean>
-<!--   Method 2 of bean injection -->
+<!--   Method 2 of bean injection: Value as an attribute-->
     <bean class="org.spring.Student" name="student2">
         <property name="studentId" value="234"/>
         <property name="studentName" value="hanuman"/>
         <property name="studentAddress" value="Ayodhya"/>
+        <property name="studentMarks" >
+            <list>
+                <value>92</value>
+                <value>29</value>
+                <null/>
+            </list>
+        </property>
+        <property name="studentConfig">
+            <map>
+                <entry key="Ram Nagar" value="22"/>
+                <entry key="Sham Nagar" value="101"/>
+            </map>
+        </property>
+        <property name="studentPAddress" ref="adref"/>
+    </bean>
+    <bean class="org.spring.Address" name="adref">
+        <property name="pincode" value="400104"/>
+        <property name="city" value="Mumbai"/>
+        <property name="state" value="Maharashtra"/>
     </bean>
 
 <!--  Method 3 of Bean injection  -->
-    <bean class="org.spring.Student" name="student3"  p:studentName="Anuj" p:studentAddress="Mumbai" p:studentId="121" />
+<!--    <bean class="org.spring.Student" name="student3"  p:studentName="Anuj" p:studentAddress="Mumbai" p:studentId="121" p:studentMarks="ListImport" p:studentpAddress-ref="adref"/>-->
+
+<!--    Inserting List Element-->
+<!--    <bean>-->
+<!--        <property name="ListImport">-->
+<!--            <list>-->
+<!--                <value>1</value>-->
+<!--                <value>2</value>-->
+<!--            </list>-->
+
+<!--        </property>-->
+<!--    </bean>-->
+<!--    Inserting Set Element-->
+<!--    <bean>-->
+<!--        <property name="SetImport">-->
+<!--            <set>-->
+<!--                <value>1</value>-->
+<!--                <value>2</value>-->
+<!--            </set>-->
+
+<!--        </property>-->
+<!--    </bean>-->
+<!--    Inserting Map Element   -->
+<!--    <bean class="">-->
+<!--        <property name="MapImpoort">-->
+<!--            <map>-->
+<!--                <entry key="a" value="22"/>-->
+<!--                <entry key="b" value="11"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>
