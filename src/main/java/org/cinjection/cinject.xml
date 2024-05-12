@@ -5,9 +5,11 @@
 <beans   xmlns="http://www.springframework.org/schema/beans"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:p="http://www.springframework.org/schema/p"
+         xmlns:c="http://www.springframework.org/schema/c"
          xsi:schemaLocation="http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-<bean class="org.cinjection.Address" id="a1">
+<!--    In the time of Ambiguity you should define the type of variable and (index)place where you are passing the variable -->
+<bean class="org.cinjection.Address" id="a1" >
     <constructor-arg value="400104"/>
     <constructor-arg value="Mumbai"/>
     <constructor-arg value="Maharashtra"/>
