@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Here xmlns:p was not working so we add that in DTD in settings-->
+<!--The above needs to be done for Intellij Idea only.-->
+<!-- Also we made the java and src as source files by right clicking on them-->
+<beans   xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:c="http://www.springframework.org/schema/c"
+         xmlns:context ="http://www.springframework.org/schema/context"
+         xmlns:p="http://www.springframework.org/schema/p"
+         xmlns:util="http://www.springframework.org/schema/util"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+<context:annotation-config/>
+<!--    Standalone list creation using utils-->
+    <util:list list-class="java.util.LinkedList" id="mojodo">
+        <value>Alaba</value>
+        <value>Balaba</value>
+        <value>jalaba</value>
+        <null/>
+    </util:list>
+    <bean class="com.springcore.autowiring.Address" name="Address" p:pincode="12344" p:city="Bangalore"/>
+    <bean class="com.springcore.autowiring.Address" name="Address1" p:pincode="12344" p:city="Mumbai"/>
+    <bean class="com.springcore.autowiring.Address" name="Address2" p:pincode="12344" p:city="Noida"/>
+    <bean class="com.springcore.autowiring.Employee" name="E1" p:name="ramu" p:datapoints-ref="mojodo"/>
+</beans>
